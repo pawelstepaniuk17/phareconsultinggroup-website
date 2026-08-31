@@ -21,7 +21,7 @@ const IndustryDetail = () => {
         meta={ind.indicators.map((i) => ({ label: i.label, value: i.value }))}
       />
       <div className="px-6 lg:px-10 -mt-2">
-        <MosaicGrid rows={2} cols={24} className="h-12 opacity-90" />
+        <MosaicGrid rows={2} cols={24} className="h-20 opacity-90" />
       </div>
 
       <section className="py-20 md:py-28 bg-background">

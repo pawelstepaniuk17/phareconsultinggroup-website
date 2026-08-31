@@ -1,8 +1,8 @@
 /**
- * SchematicMark — the Phare brand mark drawn in an electronics-schematic
+ * SchematicMark — the Phare brand mark drawn in a bold electronics-schematic
  * language: a central beacon node (the "lighthouse lamp") ringed by two
- * concentric circles, with radiating trace lines that terminate in small
- * junction dots. Pure SVG, themeable via design tokens.
+ * concentric circles, with radiating trace lines that terminate in large
+ * junction dots. Thick strokes, big circles. Pure SVG, themeable via tokens.
  */
 type Props = {
   className?: string;
@@ -15,8 +15,8 @@ const SchematicMark = ({ className = "", title }: Props) => {
   const cy = 32;
   const beams = Array.from({ length: 6 }).map((_, i) => {
     const angle = (Math.PI / 3) * i - Math.PI / 2; // start at top
-    const inner = 15;
-    const outer = 27;
+    const inner = 16;
+    const outer = 29;
     return {
       x1: cx + Math.cos(angle) * inner,
       y1: cy + Math.sin(angle) * inner,
@@ -34,23 +34,23 @@ const SchematicMark = ({ className = "", title }: Props) => {
       aria-hidden={title ? undefined : true}
       fill="none"
     >
-      {/* Outer concentric ring */}
+      {/* Outer concentric ring — thick */}
       <circle
         cx={cx}
         cy={cy}
-        r="21"
+        r="20"
         stroke="hsl(var(--foreground) / 0.35)"
-        strokeWidth="1.5"
+        strokeWidth="3"
       />
-      {/* Inner ring */}
+      {/* Inner ring — thick, colored */}
       <circle
         cx={cx}
         cy={cy}
         r="12"
         stroke="hsl(var(--primary))"
-        strokeWidth="1.5"
+        strokeWidth="3"
       />
-      {/* Radiating traces + terminal junction dots */}
+      {/* Radiating traces + large terminal junction dots */}
       {beams.map((b, i) => (
         <g key={i}>
           <line
@@ -58,21 +58,20 @@ const SchematicMark = ({ className = "", title }: Props) => {
             y1={b.y1}
             x2={b.x2}
             y2={b.y2}
-            stroke="hsl(var(--foreground) / 0.5)"
-            strokeWidth="1.5"
+            stroke="hsl(var(--foreground) / 0.55)"
+            strokeWidth="3"
             strokeLinecap="round"
           />
           <circle
             cx={b.x2}
             cy={b.y2}
-            r="2"
-            fill="hsl(var(--primary))"
+            r="3.5"
+            fill={i % 2 === 0 ? "hsl(var(--primary))" : "hsl(var(--secondary))"}
           />
         </g>
       ))}
-      {/* Beacon core node */}
-      <circle cx={cx} cy={cy} r="4.5" fill="hsl(var(--primary))" />
-      <circle cx={cx} cy={cy} r="8" stroke="hsl(var(--foreground) / 0.4)" strokeWidth="1" />
+      {/* Beacon core node — big */}
+      <circle cx={cx} cy={cy} r="6" fill="hsl(var(--primary))" />
     </svg>
   );
 };
