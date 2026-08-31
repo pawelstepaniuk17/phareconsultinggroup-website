@@ -1,0 +1,518 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mosaic Conseil — Editorial dark design system
+   Inspired by bold consultancy editorial aesthetics: deep black canvas,
+   electric magenta accent, generous whitespace, oversized typography.
+*/
+
+@layer base {
+  :root {
+    /* Core canvas — warm cream "grout" tone from the mosaic logo */
+    --background: 40 38% 95%;
+    --foreground: 215 50% 14%;
+
+    --card: 40 30% 92%;
+    --card-foreground: 215 50% 14%;
+
+    --popover: 40 38% 95%;
+    --popover-foreground: 215 50% 14%;
+
+    /* Primary — teal from the mosaic logo */
+    --primary: 176 55% 36%;
+    --primary-foreground: 40 38% 95%;
+
+    /* Secondary — coral from the mosaic logo */
+    --secondary: 8 78% 69%;
+    --secondary-foreground: 215 50% 14%;
+
+    /* Muted — soft cream surfaces */
+    --muted: 40 25% 88%;
+    --muted-foreground: 215 25% 38%;
+
+    /* Accent — warm orange from the mosaic logo */
+    --accent: 32 88% 62%;
+    --accent-foreground: 215 50% 14%;
+
+    --destructive: 0 65% 48%;
+    --destructive-foreground: 40 38% 95%;
+
+    --border: 40 22% 82%;
+    --input: 40 22% 82%;
+    --ring: 176 55% 36%;
+
+    --radius: 0;
+
+    /* Extended editorial palette — direct logo tile tones */
+    --ink: 215 50% 14%;
+    --ink-soft: 215 35% 22%;
+    --paper: 40 38% 95%;
+    --paper-soft: 40 30% 92%;
+    --cobalt: 176 55% 36%;        /* teal (renamed for continuity) */
+    --cobalt-soft: 176 45% 52%;
+    --teal-tile: 176 55% 36%;
+    --sage: 8 78% 69%;             /* coral (renamed for continuity) */
+    --forest: 8 60% 55%;
+    --ochre: 32 88% 62%;           /* orange */
+    --cream: 40 45% 88%;
+
+    /* Sidebar */
+    --sidebar-background: 40 38% 95%;
+    --sidebar-foreground: 215 50% 14%;
+    --sidebar-primary: 176 55% 36%;
+    --sidebar-primary-foreground: 40 38% 95%;
+    --sidebar-accent: 40 25% 88%;
+    --sidebar-accent-foreground: 215 50% 14%;
+    --sidebar-border: 40 22% 82%;
+    --sidebar-ring: 176 55% 36%;
+  }
+
+  .dark {
+    /* Dark mode — deep cobalt canvas with cream type */
+    --background: 215 50% 10%;
+    --foreground: 40 38% 95%;
+    --card: 215 40% 14%;
+    --card-foreground: 40 38% 95%;
+    --popover: 215 40% 14%;
+    --popover-foreground: 40 38% 95%;
+    --primary: 40 75% 58%;
+    --primary-foreground: 215 50% 10%;
+    --secondary: 188 35% 58%;
+    --secondary-foreground: 215 50% 10%;
+    --muted: 215 30% 16%;
+    --muted-foreground: 40 20% 75%;
+    --accent: 155 30% 50%;
+    --accent-foreground: 215 50% 10%;
+    --destructive: 0 65% 48%;
+    --destructive-foreground: 40 38% 95%;
+    --border: 215 25% 22%;
+    --input: 215 25% 22%;
+    --ring: 40 75% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+}
+
+@layer utilities {
+  /* Scroll animation utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-scale-up {
+    animation: scaleUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  /* Stagger delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+
+  /* Editorial display utilities */
+  .text-display {
+    font-family: "Inter", system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+
+  .text-eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 500;
+  }
+
+  /* Hover underline that grows from left */
+  .link-underline {
+    background-image: linear-gradient(hsl(var(--primary)), hsl(var(--primary)));
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding-bottom: 4px;
+  }
+  .link-underline:hover {
+    background-size: 100% 2px;
+  }
+
+  /* Mosaic tile-cluster brand mark — small 2x2 grid evoking the logo */
+  .tile-mark {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.1em;
+  }
+  .tile-mark > i {
+    display: block;
+    background: currentColor;
+  }
+  .tile-mark > i:nth-child(1) { background: hsl(var(--primary)); }
+  .tile-mark > i:nth-child(2) { background: hsl(var(--accent)); }
+  .tile-mark > i:nth-child(3) { background: hsl(var(--secondary)); }
+  .tile-mark > i:nth-child(4) { background: hsl(var(--cobalt-soft)); }
+
+  /* Subtle radial backdrop */
+  .ambient-glow {
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 0%, hsl(var(--primary) / 0.14), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 0% 100%, hsl(var(--secondary) / 0.18), transparent 60%);
+  }
+
+  /* Marquee */
+  .marquee {
+    animation: marquee 40s linear infinite;
+  }
+
+  /* Slow marquee for ticker bands */
+  .marquee-slow {
+    animation: marquee 60s linear infinite;
+  }
+
+  /* Floating mosaic tiles */
+  .float-y {
+    animation: floatY 9s ease-in-out infinite;
+  }
+  .float-y-slow {
+    animation: floatY 14s ease-in-out infinite;
+  }
+  .drift-x {
+    animation: driftX 18s ease-in-out infinite;
+  }
+  .spin-slow {
+    animation: spinSlow 22s linear infinite;
+  }
+  .pulse-glow {
+    animation: pulseGlow 6s ease-in-out infinite;
+  }
+  .gradient-mesh {
+    background:
+      radial-gradient(at 20% 20%, hsl(var(--cobalt) / 0.14) 0px, transparent 45%),
+      radial-gradient(at 80% 0%, hsl(var(--sage) / 0.14) 0px, transparent 45%),
+      radial-gradient(at 75% 80%, hsl(var(--ochre) / 0.18) 0px, transparent 45%),
+      radial-gradient(at 0% 80%, hsl(var(--teal-tile) / 0.18) 0px, transparent 50%);
+    background-size: 200% 200%;
+    animation: meshShift 20s ease-in-out infinite;
+  }
+
+  /* Mega-menu roll-down */
+  .mega-roll {
+    transform-origin: top;
+    animation: rollDown 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Animated underline scan for nav items */
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: hsl(var(--primary));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .nav-link:hover::after,
+  .nav-link[data-active="true"]::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Grain overlay */
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+  }
+
+  /* ---------- Glassmorphism ---------- */
+  .glass {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--paper) / 0.55) 0%,
+      hsl(var(--paper) / 0.28) 100%
+    );
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid hsl(var(--paper) / 0.55);
+    box-shadow:
+      inset 0 1px 0 hsl(var(--paper) / 0.6),
+      0 30px 60px -30px hsl(var(--ink) / 0.45);
+  }
+  .glass-ink {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--ink) / 0.55) 0%,
+      hsl(var(--ink) / 0.28) 100%
+    );
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid hsl(var(--paper) / 0.18);
+    box-shadow:
+      inset 0 1px 0 hsl(var(--paper) / 0.12),
+      0 30px 60px -30px hsl(var(--ink) / 0.6);
+    color: hsl(var(--paper));
+  }
+  .glass-tint {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--cobalt) / 0.32) 0%,
+      hsl(var(--ochre) / 0.18) 100%
+    );
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid hsl(var(--paper) / 0.4);
+    box-shadow:
+      inset 0 1px 0 hsl(var(--paper) / 0.5),
+      0 30px 70px -30px hsl(var(--cobalt) / 0.55);
+  }
+  /* Refractive specular sweep that animates across glass surfaces */
+  .glass-refract {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .glass-refract::after {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: linear-gradient(
+      115deg,
+      transparent 35%,
+      hsl(var(--paper) / 0.45) 50%,
+      transparent 65%
+    );
+    transform: translateX(-100%);
+    animation: refractSweep 7s ease-in-out infinite;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  /* ---------- Unusual graphic motifs ---------- */
+  /* Animated dot field background */
+  .dot-field {
+    background-image: radial-gradient(
+      hsl(var(--ink) / 0.18) 1px,
+      transparent 1.4px
+    );
+    background-size: 22px 22px;
+    animation: dotDrift 18s linear infinite;
+  }
+  /* Conic prism — slow rotating chromatic disc */
+  .prism {
+    background: conic-gradient(
+      from 0deg,
+      hsl(var(--cobalt)) 0%,
+      hsl(var(--sage)) 25%,
+      hsl(var(--ochre)) 50%,
+      hsl(var(--teal-tile)) 75%,
+      hsl(var(--cobalt)) 100%
+    );
+    filter: blur(40px);
+    animation: prismSpin 30s linear infinite;
+  }
+  /* Soft warped blob for organic shapes */
+  .blob {
+    border-radius: 42% 58% 63% 37% / 47% 41% 59% 53%;
+    animation: blobMorph 14s ease-in-out infinite;
+  }
+  /* Magnetic hover — gentle lift + tilt */
+  .magnetic {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .magnetic:hover {
+    transform: translateY(-6px) rotate(-0.4deg);
+    box-shadow: 0 40px 80px -30px hsl(var(--ink) / 0.5);
+  }
+  /* Ticker rail */
+  .ticker-rail {
+    animation: marquee 45s linear infinite;
+  }
+  /* Reveal-on-scroll: tile-by-tile mosaic flip */
+  .tile-flip {
+    animation: tileFlip 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    transform-origin: center;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+  50%      { transform: translateY(-22px) rotate(var(--rot, 0deg)); }
+}
+
+@keyframes driftX {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(40px); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.18; transform: scale(1); }
+  50%      { opacity: 0.32; transform: scale(1.08); }
+}
+
+@keyframes meshShift {
+  0%, 100% { background-position: 0% 0%; }
+  50%      { background-position: 100% 100%; }
+}
+
+@keyframes rollDown {
+  from { transform: scaleY(0); opacity: 0; }
+  to   { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes refractSweep {
+  0%   { transform: translateX(-100%) rotate(8deg); }
+  60%  { transform: translateX(120%) rotate(8deg); }
+  100% { transform: translateX(120%) rotate(8deg); }
+}
+
+@keyframes dotDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 88px 44px; }
+}
+
+@keyframes prismSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes blobMorph {
+  0%, 100% {
+    border-radius: 42% 58% 63% 37% / 47% 41% 59% 53%;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    border-radius: 60% 40% 33% 67% / 38% 65% 35% 62%;
+    transform: translate(20px, -10px) rotate(8deg);
+  }
+  66% {
+    border-radius: 33% 67% 70% 30% / 55% 35% 65% 45%;
+    transform: translate(-15px, 15px) rotate(-6deg);
+  }
+}
+
+@keyframes tileFlip {
+  from {
+    opacity: 0;
+    transform: perspective(600px) rotateX(-65deg) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(600px) rotateX(0) translateY(0);
+  }
+}
