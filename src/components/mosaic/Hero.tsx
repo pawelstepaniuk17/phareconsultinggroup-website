@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import mosaicLogo from "@/assets/mosaic-conseil-logo.png";
-import cardStrategy from "@/assets/card-strategy.jpg";
-import cardPortfolio from "@/assets/card-portfolio.jpg";
-import cardPricing from "@/assets/card-pricing.jpg";
-import cardMargin from "@/assets/card-margin.jpg";
+import heroWorkshop from "@/assets/hero-workshop.png";
+import cardStrategy from "@/assets/editorial-plan.png";
+import cardPortfolio from "@/assets/editorial-model.png";
+import cardPricing from "@/assets/editorial-failure.png";
+import cardMargin from "@/assets/editorial-call.png";
 
 const editorialCards = [
   {
@@ -65,13 +66,31 @@ const Hero = () => {
       ref={sectionRef}
       className="relative overflow-hidden bg-background pt-32 pb-12 grain"
     >
-      {/* Soft, single radial wash — quiet backdrop */}
+      {/* High-resolution editorial cover — top band, faded into the canvas */}
+      <div aria-hidden className="absolute inset-x-0 top-0 h-[92%] pointer-events-none">
+        <img
+          src={heroWorkshop}
+          alt=""
+          className="w-full h-full object-cover object-center opacity-40"
+          style={{ transform: `translateY(${scrollY * 0.15}px)` }}
+        />
+        {/* Dark gradient scrim for text readability */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, hsl(var(--background) / 0.72) 0%, hsl(var(--background) / 0.86) 45%, hsl(var(--background)) 100%)",
+          }}
+        />
+      </div>
+
+      {/* Soft, single gold wash — quiet backdrop */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(80% 60% at 85% 0%, hsl(var(--secondary) / 0.10), transparent 60%), radial-gradient(60% 50% at 0% 100%, hsl(var(--primary) / 0.08), transparent 60%)",
+            "radial-gradient(70% 55% at 85% 0%, hsl(var(--primary) / 0.10), transparent 60%)",
         }}
       />
 

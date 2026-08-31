@@ -63,13 +63,14 @@ const Contact = () => {
       ref={sectionRef}
       className="py-28 md:py-40 bg-background relative overflow-hidden"
     >
-      {/* Glow */}
+      {/* Fine grid keyline backdrop — no ambient sphere */}
       <div
         aria-hidden
-        className="absolute -top-40 right-1/3 w-[700px] h-[700px] rounded-full opacity-25 blur-3xl pointer-events-none"
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
         style={{
-          background:
-            "radial-gradient(circle at center, hsl(var(--primary)) 0%, transparent 65%)",
+          backgroundImage:
+            "linear-gradient(hsl(var(--paper)/.6) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--paper)/.6) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
         }}
       />
 

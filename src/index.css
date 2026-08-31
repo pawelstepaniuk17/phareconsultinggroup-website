@@ -2,93 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Mosaic Conseil — Editorial dark design system
-   Inspired by bold consultancy editorial aesthetics: deep black canvas,
-   electric magenta accent, generous whitespace, oversized typography.
+/* Mosaic Conseil — Institutional dark design system
+   Tier-one advisory aesthetic: deep city-navy canvas, burnished-gold
+   signature accent, editorial serif display, hairline keylines,
+   restrained metallic mosaic palette.
 */
 
 @layer base {
   :root {
-    /* Core canvas — warm cream "grout" tone from the mosaic logo */
-    --background: 40 38% 95%;
-    --foreground: 215 50% 14%;
+    /* Core canvas — deep city navy / near-obsidian */
+    --background: 220 33% 8%;
+    --foreground: 40 28% 90%;
 
-    --card: 40 30% 92%;
-    --card-foreground: 215 50% 14%;
+    /* Elevated card surface — subtly lifted navy */
+    --card: 220 28% 11%;
+    --card-foreground: 40 28% 90%;
 
-    --popover: 40 38% 95%;
-    --popover-foreground: 215 50% 14%;
+    --popover: 220 30% 10%;
+    --popover-foreground: 40 28% 90%;
 
-    /* Primary — teal from the mosaic logo */
-    --primary: 176 55% 36%;
-    --primary-foreground: 40 38% 95%;
+    /* Primary — burnished gold */
+    --primary: 38 58% 56%;
+    --primary-foreground: 220 40% 7%;
 
-    /* Secondary — coral from the mosaic logo */
-    --secondary: 8 78% 69%;
-    --secondary-foreground: 215 50% 14%;
+    /* Secondary — deep brass */
+    --secondary: 34 40% 44%;
+    --secondary-foreground: 40 30% 92%;
 
-    /* Muted — soft cream surfaces */
-    --muted: 40 25% 88%;
-    --muted-foreground: 215 25% 38%;
+    /* Muted — elevated navy surface */
+    --muted: 220 24% 13%;
+    --muted-foreground: 40 12% 66%;
 
-    /* Accent — warm orange from the mosaic logo */
-    --accent: 32 88% 62%;
-    --accent-foreground: 215 50% 14%;
+    /* Accent — pale champagne */
+    --accent: 42 60% 68%;
+    --accent-foreground: 220 40% 7%;
 
-    --destructive: 0 65% 48%;
-    --destructive-foreground: 40 38% 95%;
+    --destructive: 0 62% 48%;
+    --destructive-foreground: 40 30% 92%;
 
-    --border: 40 22% 82%;
-    --input: 40 22% 82%;
-    --ring: 176 55% 36%;
+    /* Hairline keyline — approximates border-white/10 on navy */
+    --border: 220 18% 20%;
+    --input: 220 18% 22%;
+    --ring: 38 58% 56%;
 
-    --radius: 0;
+    --radius: 0.5rem;
 
-    /* Extended editorial palette — direct logo tile tones */
-    --ink: 215 50% 14%;
-    --ink-soft: 215 35% 22%;
-    --paper: 40 38% 95%;
-    --paper-soft: 40 30% 92%;
-    --cobalt: 176 55% 36%;        /* teal (renamed for continuity) */
-    --cobalt-soft: 176 45% 52%;
-    --teal-tile: 176 55% 36%;
-    --sage: 8 78% 69%;             /* coral (renamed for continuity) */
-    --forest: 8 60% 55%;
-    --ochre: 32 88% 62%;           /* orange */
-    --cream: 40 45% 88%;
+    /* Extended palette — restrained metallic mosaic tones */
+    --ink: 220 42% 5%;             /* obsidian panel */
+    --ink-soft: 220 30% 12%;
+    --paper: 40 28% 90%;
+    --paper-soft: 40 18% 84%;
+    --cobalt: 210 24% 46%;         /* steel blue */
+    --cobalt-soft: 210 22% 58%;
+    --teal-tile: 198 26% 42%;      /* slate teal */
+    --sage: 34 40% 44%;            /* brass */
+    --forest: 28 42% 40%;          /* bronze */
+    --ochre: 40 62% 60%;           /* gold */
+    --cream: 40 28% 90%;
 
     /* Sidebar */
-    --sidebar-background: 40 38% 95%;
-    --sidebar-foreground: 215 50% 14%;
-    --sidebar-primary: 176 55% 36%;
-    --sidebar-primary-foreground: 40 38% 95%;
-    --sidebar-accent: 40 25% 88%;
-    --sidebar-accent-foreground: 215 50% 14%;
-    --sidebar-border: 40 22% 82%;
-    --sidebar-ring: 176 55% 36%;
+    --sidebar-background: 220 33% 8%;
+    --sidebar-foreground: 40 28% 90%;
+    --sidebar-primary: 38 58% 56%;
+    --sidebar-primary-foreground: 220 40% 7%;
+    --sidebar-accent: 220 24% 13%;
+    --sidebar-accent-foreground: 40 28% 90%;
+    --sidebar-border: 220 18% 20%;
+    --sidebar-ring: 38 58% 56%;
   }
 
   .dark {
-    /* Dark mode — deep cobalt canvas with cream type */
-    --background: 215 50% 10%;
-    --foreground: 40 38% 95%;
-    --card: 215 40% 14%;
-    --card-foreground: 40 38% 95%;
-    --popover: 215 40% 14%;
-    --popover-foreground: 40 38% 95%;
-    --primary: 40 75% 58%;
-    --primary-foreground: 215 50% 10%;
-    --secondary: 188 35% 58%;
-    --secondary-foreground: 215 50% 10%;
-    --muted: 215 30% 16%;
-    --muted-foreground: 40 20% 75%;
-    --accent: 155 30% 50%;
-    --accent-foreground: 215 50% 10%;
-    --destructive: 0 65% 48%;
-    --destructive-foreground: 40 38% 95%;
-    --border: 215 25% 22%;
-    --input: 215 25% 22%;
-    --ring: 40 75% 58%;
+    --background: 220 33% 8%;
+    --foreground: 40 28% 90%;
+    --card: 220 28% 11%;
+    --card-foreground: 40 28% 90%;
+    --popover: 220 30% 10%;
+    --popover-foreground: 40 28% 90%;
+    --primary: 38 58% 56%;
+    --primary-foreground: 220 40% 7%;
+    --secondary: 34 40% 44%;
+    --secondary-foreground: 40 30% 92%;
+    --muted: 220 24% 13%;
+    --muted-foreground: 40 12% 66%;
+    --accent: 42 60% 68%;
+    --accent-foreground: 220 40% 7%;
+    --destructive: 0 62% 48%;
+    --destructive-foreground: 40 30% 92%;
+    --border: 220 18% 20%;
+    --input: 220 18% 22%;
+    --ring: 38 58% 56%;
   }
 }
 
@@ -99,7 +101,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-feature-settings: "ss01", "cv11";
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
   }
 
   html {
@@ -148,18 +150,19 @@
   .delay-600 { animation-delay: 600ms; }
   .delay-700 { animation-delay: 700ms; }
 
-  /* Editorial display utilities */
+  /* Editorial display utilities — Newsreader serif */
   .text-display {
-    font-family: "Inter", system-ui, sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 0.95;
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.02;
   }
 
   .text-eyebrow {
-    font-size: 0.75rem;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     font-weight: 500;
   }
 
@@ -194,11 +197,10 @@
   .tile-mark > i:nth-child(3) { background: hsl(var(--secondary)); }
   .tile-mark > i:nth-child(4) { background: hsl(var(--cobalt-soft)); }
 
-  /* Subtle radial backdrop */
+  /* Subtle radial backdrop — single restrained gold wash */
   .ambient-glow {
     background:
-      radial-gradient(ellipse 60% 50% at 80% 0%, hsl(var(--primary) / 0.14), transparent 60%),
-      radial-gradient(ellipse 50% 40% at 0% 100%, hsl(var(--secondary) / 0.18), transparent 60%);
+      radial-gradient(ellipse 70% 55% at 82% -5%, hsl(var(--primary) / 0.07), transparent 62%);
   }
 
   /* Marquee */

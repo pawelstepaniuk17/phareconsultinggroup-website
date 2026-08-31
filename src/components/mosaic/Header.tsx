@@ -216,7 +216,7 @@ const Header = () => {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden absolute top-full left-0 right-0 bg-background border-b border-border transition-all duration-300 ${
+        className={`lg:hidden absolute top-full left-0 right-0 h-[calc(100dvh-80px)] overflow-y-auto bg-background border-b border-border transition-all duration-300 ${
           isMobileMenuOpen
             ? "opacity-100 visible"
             : "opacity-0 invisible pointer-events-none"
