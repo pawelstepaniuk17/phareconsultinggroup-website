@@ -77,8 +77,9 @@ const Contact = () => {
       <div className="relative px-6 lg:px-10">
         {/* Big headline */}
         <div className="reveal opacity-0 max-w-5xl mb-20">
-          <p className="text-eyebrow text-primary mb-6 flex items-center gap-3">
-            <span className="w-8 h-px bg-primary" />
+          <p className="text-eyebrow text-primary mb-6 flex items-center gap-2">
+            <span aria-hidden className="inline-block w-2.5 h-2.5 rounded-full bg-primary" />
+            <span aria-hidden className="inline-block w-7 h-0.5 bg-primary" />
             Send the plan
           </p>
           <h2 className="text-display text-foreground text-6xl md:text-7xl lg:text-8xl">
@@ -237,15 +238,12 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-7 py-4 text-sm font-semibold hover:bg-primary/90 transition-colors disabled:opacity-60"
+                className="group inline-flex items-center gap-3 rounded-full bg-primary text-primary-foreground pl-8 pr-3 py-3 text-sm font-semibold hover:bg-primary/90 transition-colors disabled:opacity-60"
               >
                 {isSubmitting ? "Sending..." : "Send the letter"}
-                {!isSubmitting && (
-                  <ArrowUpRight
-                    size={18}
-                    className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                  />
-                )}
+                <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary-foreground/15 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                  <ArrowUpRight size={16} strokeWidth={2.5} />
+                </span>
               </button>
 
               <p className="text-xs text-foreground/50">

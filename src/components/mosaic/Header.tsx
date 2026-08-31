@@ -197,7 +197,7 @@ const Header = () => {
             </button>
             <button
               onClick={() => goTo("/contact")}
-              className="text-[13px] font-medium px-5 py-2.5 bg-primary text-primary-foreground hover:bg-primary/85 transition-colors"
+              className="text-[13px] font-medium px-5 py-2.5 rounded-full bg-primary text-primary-foreground hover:bg-primary/85 transition-colors"
             >
               Send the plan
             </button>
@@ -234,7 +234,7 @@ const Header = () => {
           ))}
           <button
             onClick={() => goTo("/contact")}
-            className="mt-4 w-full bg-primary text-primary-foreground py-3 font-medium"
+            className="mt-4 w-full rounded-full bg-primary text-primary-foreground py-3 font-medium"
           >
             Send the plan
           </button>
@@ -257,7 +257,7 @@ const Header = () => {
               <span className="text-display text-3xl lg:text-4xl text-foreground font-bold tracking-tight">
                 {activeItem.label}
               </span>
-              <span className="inline-flex items-center justify-center w-8 h-8 lg:w-9 lg:h-9 bg-primary text-primary-foreground transition-transform group-hover:translate-x-1">
+              <span className="inline-flex items-center justify-center w-8 h-8 lg:w-9 lg:h-9 rounded-full bg-primary text-primary-foreground transition-transform group-hover:translate-x-1">
                 <ArrowUpRight size={16} strokeWidth={2.5} />
               </span>
             </button>
@@ -312,7 +312,7 @@ const Header = () => {
                 </div>
                 <button
                   onClick={() => goTo(activeItem.feature!.to)}
-                  className="group inline-flex items-center justify-center w-12 h-12 bg-primary text-primary-foreground shrink-0 transition-transform hover:translate-x-1"
+                  className="group inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground shrink-0 transition-transform hover:translate-x-1"
                 >
                   <ArrowUpRight size={20} strokeWidth={2.5} />
                 </button>

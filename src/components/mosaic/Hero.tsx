@@ -106,28 +106,40 @@ const Hero = () => {
           <HeroCircuit className="flex-1 h-44 sm:h-52 lg:h-72" />
         </div>
 
-        <div className="reveal delay-200 opacity-0 mt-10 lg:mt-16 lg:max-w-2xl lg:ml-auto">
-          <p className="text-eyebrow text-foreground/55 mb-4 flex items-center gap-3">
-            <span className="w-8 h-px bg-primary" /> Remote workshop
-          </p>
-          <p className="text-base text-foreground/80 leading-relaxed mb-6 [text-wrap:pretty]">
-            Phare Consulting Group takes one plan, one model, one forecast at a
-            time and rebuilds it from the invoice line up. The workshop
-            is small and remote. Two names go on the sheet. What comes
-            back is the same artifact you sent, redrawn against the
-            evidence, with the branches that no longer bear weight
-            crossed through. One artifact. One rebuild. No standing
-            retainer.
-          </p>
-          <button
-            onClick={() => scrollToSection("#contact")}
-            className="group inline-flex items-center gap-2 text-sm font-semibold text-foreground border-b-2 border-primary pb-1 hover:gap-3 transition-all"
-          >
-            Send the plan
-            <span className="inline-flex items-center justify-center w-6 h-6 bg-primary text-primary-foreground">
-              <ArrowUpRight size={14} strokeWidth={2.5} />
-            </span>
-          </button>
+        <div className="reveal delay-200 opacity-0 mt-10 lg:mt-16 grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+          {/* Headline — left */}
+          <div className="lg:col-span-6">
+            <p className="text-eyebrow text-primary mb-5 flex items-center gap-3">
+              <span aria-hidden className="inline-block w-2.5 h-2.5 rounded-full bg-primary" />
+              Remote workshop
+            </p>
+            <h1 className="text-display text-foreground text-5xl md:text-6xl lg:text-7xl leading-[0.98] text-balance">
+              The second reading, before the room agrees
+              <span className="text-primary">.</span>
+            </h1>
+          </div>
+
+          {/* Copy + CTA — right */}
+          <div className="lg:col-span-6 lg:pt-3">
+            <p className="text-base text-foreground/80 leading-relaxed mb-8 [text-wrap:pretty]">
+              Phare Consulting Group takes one plan, one model, one forecast at a
+              time and rebuilds it from the invoice line up. The workshop
+              is small and remote. Two names go on the sheet. What comes
+              back is the same artifact you sent, redrawn against the
+              evidence, with the branches that no longer bear weight
+              crossed through. One artifact. One rebuild. No standing
+              retainer.
+            </p>
+            <button
+              onClick={() => scrollToSection("#contact")}
+              className="group inline-flex items-center gap-3 rounded-full bg-primary text-primary-foreground pl-6 pr-2 py-2 text-sm font-semibold hover:bg-primary/90 transition-colors"
+            >
+              Send the plan
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary-foreground/15 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <ArrowUpRight size={16} strokeWidth={2.5} />
+              </span>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -168,7 +180,7 @@ const Hero = () => {
             {/* Content — solid card panel */}
             <div className="flex-1 flex flex-col p-6 pt-5">
               <p className="text-eyebrow text-primary mb-3 flex items-center gap-2">
-                <span className="w-6 h-px bg-primary" />
+                <span aria-hidden className="inline-block w-2 h-2 rounded-full bg-primary" />
                 {card.eyebrow}
               </p>
               <h3 className="text-display text-lg lg:text-xl leading-tight text-foreground mb-6">
@@ -176,7 +188,7 @@ const Hero = () => {
               </h3>
               <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-foreground">
                 See the rebuild
-                <span className="inline-flex items-center justify-center w-8 h-8 bg-primary text-primary-foreground transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
                   <ArrowUpRight size={14} strokeWidth={2.5} />
                 </span>
               </span>
@@ -201,7 +213,7 @@ const Hero = () => {
                   "The margin, rebuilt line by line",
                 ].map((label) => (
                   <span key={`${dup}-${label}`} className="flex items-center gap-3">
-                    <span aria-hidden className="inline-block w-1.5 h-1.5 bg-primary" />
+                    <span aria-hidden className="inline-block w-1.5 h-1.5 rounded-full bg-primary" />
                     {label}
                   </span>
                 ))}

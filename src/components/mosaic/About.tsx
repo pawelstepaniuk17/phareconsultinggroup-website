@@ -99,7 +99,7 @@ const About = () => {
           <div className="lg:col-span-7">
             <h2 className="reveal opacity-0 text-display text-foreground text-5xl md:text-6xl lg:text-7xl leading-[0.95] mb-8">
               A workshop of two. Kept small on purpose.
-              <span className="inline-flex items-center justify-center align-middle ml-3 w-10 h-10 lg:w-12 lg:h-12 bg-primary text-primary-foreground translate-y-[-0.1em]">
+              <span className="inline-flex items-center justify-center align-middle ml-3 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-primary text-primary-foreground translate-y-[-0.1em]">
                 <ArrowUpRightIcon />
               </span>
             </h2>
@@ -133,12 +133,24 @@ const About = () => {
                 key={s.headline}
                 className={`reveal delay-${(i + 2) * 100} opacity-0 flex flex-col`}
               >
-                {/* Hairline accent — rotates through brand palette */}
-                <span
-                  className={`block w-10 h-1 mb-4 ${
-                    ["bg-primary", "bg-accent", "bg-secondary", "bg-[hsl(var(--teal-tile))]"][i % 4]
-                  }`}
-                />
+                {/* Schematic node + trace — rotates through brand palette */}
+                <span aria-hidden className="flex items-center mb-4">
+                  <span
+                    className={`inline-block w-3.5 h-3.5 rounded-full ${
+                      ["bg-primary", "bg-accent", "bg-secondary", "bg-[hsl(var(--teal-tile))]"][i % 4]
+                    }`}
+                  />
+                  <span
+                    className={`inline-block h-0.5 w-9 ${
+                      ["bg-primary", "bg-accent", "bg-secondary", "bg-[hsl(var(--teal-tile))]"][i % 4]
+                    }`}
+                  />
+                  <span
+                    className={`inline-block w-2 h-2 rounded-full ring-2 ring-inset bg-transparent ${
+                      ["ring-primary", "ring-accent", "ring-secondary", "ring-[hsl(var(--teal-tile))]"][i % 4]
+                    }`}
+                  />
+                </span>
                 <p className="text-eyebrow text-foreground/55 mb-3">
                   {s.headline}
                 </p>
@@ -176,12 +188,50 @@ const About = () => {
                 key={p.title}
                 className={`reveal delay-${(i + 3) * 100} opacity-0 bg-background p-10 lg:p-12 group hover:bg-muted transition-colors`}
               >
-                <div className="mb-6 grid grid-cols-2 gap-1 w-10 h-10">
-                  <span className="bg-primary" />
-                  <span className="bg-accent" />
-                  <span className="bg-secondary" />
-                  <span className="bg-[hsl(var(--cobalt-soft))]" />
-                </div>
+                {/* Small circuit-node schematic — circles and traces */}
+                <svg
+                  aria-hidden
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  className="mb-6"
+                >
+                  <g
+                    stroke={
+                      ["hsl(var(--primary))", "hsl(var(--secondary))", "hsl(var(--accent))"][i % 3]
+                    }
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  >
+                    <path d="M8 12 H30 V36" />
+                    <path d="M8 12 V30 H20" />
+                  </g>
+                  <g
+                    fill={
+                      ["hsl(var(--primary))", "hsl(var(--secondary))", "hsl(var(--accent))"][i % 3]
+                    }
+                  >
+                    <circle cx="8" cy="12" r="5" />
+                    <circle cx="30" cy="36" r="5" />
+                  </g>
+                  <circle
+                    cx="30"
+                    cy="12"
+                    r="4.5"
+                    fill="hsl(var(--background))"
+                    stroke={
+                      ["hsl(var(--primary))", "hsl(var(--secondary))", "hsl(var(--accent))"][i % 3]
+                    }
+                    strokeWidth="2.5"
+                  />
+                  <circle
+                    cx="20"
+                    cy="30"
+                    r="3.5"
+                    fill="hsl(var(--foreground) / 0.55)"
+                  />
+                </svg>
                 <h4 className="text-display text-2xl text-foreground mb-4">
                   {p.title}
                 </h4>
