@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import mosaicLogo from "@/assets/mosaic-conseil-logo.png";
-import cardStrategy from "@/assets/card-strategy.jpg";
-import cardPortfolio from "@/assets/card-portfolio.jpg";
-import cardPricing from "@/assets/card-pricing.jpg";
-import cardMargin from "@/assets/card-margin.jpg";
+import SchematicMark from "@/components/mosaic/SchematicMark";
+import HeroCircuit from "@/components/mosaic/HeroCircuit";
+import heroWorkshop from "@/assets/hero-workshop.png";
+import cardStrategy from "@/assets/editorial-plan.png";
+import cardPortfolio from "@/assets/editorial-model.png";
+import cardPricing from "@/assets/editorial-failure.png";
+import cardMargin from "@/assets/editorial-call.png";
 
 const editorialCards = [
   {
@@ -65,75 +67,79 @@ const Hero = () => {
       ref={sectionRef}
       className="relative overflow-hidden bg-background pt-32 pb-12 grain"
     >
-      {/* Soft, single radial wash — quiet backdrop */}
+      {/* Editorial cover — subtle top band, washed into the bright canvas */}
+      <div aria-hidden className="absolute inset-x-0 top-0 h-[92%] pointer-events-none">
+        <img
+          src={heroWorkshop}
+          alt=""
+          className="w-full h-full object-cover object-center opacity-[0.16]"
+          style={{ transform: `translateY(${scrollY * 0.15}px)` }}
+        />
+        {/* Light gradient scrim for text readability on paper */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.82) 50%, hsl(var(--background)) 100%)",
+          }}
+        />
+      </div>
+
+      {/* Soft, single teal wash — quiet backdrop */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(80% 60% at 85% 0%, hsl(var(--secondary) / 0.10), transparent 60%), radial-gradient(60% 50% at 0% 100%, hsl(var(--primary) / 0.08), transparent 60%)",
+            "radial-gradient(70% 55% at 85% 0%, hsl(var(--primary) / 0.10), transparent 60%)",
         }}
       />
 
-      {/* Massive editorial headline with mosaic tile accent */}
-      <div className="relative z-10 px-6 lg:px-10 pt-12 lg:pt-20 grid lg:grid-cols-12 gap-8 items-start">
-        <div className="reveal opacity-0 lg:col-span-8">
-          {/* Brand mark + editorial mosaic composition (no text) */}
-          <div className="flex items-start gap-8">
-            <img
-              src={mosaicLogo}
-              alt="Mosaic Conseil"
-              width={64}
-              height={64}
-              className="w-12 h-12 lg:w-16 lg:h-16 object-contain shrink-0"
-            />
-
-            {/* Abstract mosaic tile composition — echoes the brand grid */}
-            <div
-              aria-hidden
-              className="relative flex-1 h-40 lg:h-56 grid grid-cols-8 grid-rows-4 gap-1.5 lg:gap-2"
-            >
-              <div className="col-span-2 row-span-2 bg-primary" />
-              <div className="col-span-1 row-span-1 bg-secondary/70" />
-              <div className="col-span-1 row-span-2 bg-foreground/10" />
-              <div className="col-span-2 row-span-1 bg-accent/80" />
-              <div className="col-span-2 row-span-3 bg-foreground/[0.06] border border-border" />
-              <div className="col-span-1 row-span-1 bg-primary/30" />
-              <div className="col-span-2 row-span-2 bg-secondary" />
-              <div className="col-span-1 row-span-1 bg-accent/50" />
-              <div className="col-span-1 row-span-1 bg-foreground/15" />
-              <div className="col-span-2 row-span-1 bg-primary/60" />
-              <div className="col-span-1 row-span-1 bg-foreground/[0.06] border border-border" />
-              <div className="col-span-1 row-span-1 bg-accent" />
-              <div className="col-span-2 row-span-1 bg-foreground/10" />
-              <div className="col-span-1 row-span-1 bg-primary/40" />
-              <div className="col-span-1 row-span-1 bg-secondary/50" />
-            </div>
-          </div>
+      {/* Full-width reactive circuit band */}
+      <div className="relative z-10 px-6 lg:px-10 pt-12 lg:pt-20">
+        <div className="reveal opacity-0 flex items-center gap-6 lg:gap-10">
+          <SchematicMark
+            title="Phare Consulting Group"
+            className="w-16 h-16 lg:w-24 lg:h-24 shrink-0"
+          />
+          {/* Wide, pointer-reactive schematic — spans the full row */}
+          <HeroCircuit className="flex-1 h-44 sm:h-52 lg:h-72" />
         </div>
 
-        <div className="reveal delay-200 opacity-0 lg:col-span-4 lg:pt-6">
-          <p className="text-eyebrow text-foreground/55 mb-4 flex items-center gap-3">
-            <span className="w-8 h-px bg-primary" /> Remote workshop
-          </p>
-          <p className="text-base text-foreground/80 leading-relaxed mb-6 [text-wrap:pretty]">
-            Mosaic Conseil takes one plan, one model, one forecast at a
-            time and rebuilds it from the invoice line up. The workshop
-            is small and remote. Two names go on the sheet. What comes
-            back is the same artifact you sent, redrawn against the
-            evidence, with the branches that no longer bear weight
-            crossed through. One artifact. One rebuild. No standing
-            retainer.
-          </p>
-          <button
-            onClick={() => scrollToSection("#contact")}
-            className="group inline-flex items-center gap-2 text-sm font-semibold text-foreground border-b-2 border-primary pb-1 hover:gap-3 transition-all"
-          >
-            Send the plan
-            <span className="inline-flex items-center justify-center w-6 h-6 bg-primary text-primary-foreground">
-              <ArrowUpRight size={14} strokeWidth={2.5} />
-            </span>
-          </button>
+        <div className="reveal delay-200 opacity-0 mt-10 lg:mt-16 grid lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+          {/* Headline — left */}
+          <div className="lg:col-span-6">
+            <p className="text-eyebrow text-primary mb-5 flex items-center gap-3">
+              <span aria-hidden className="inline-block w-2.5 h-2.5 rounded-full bg-primary" />
+              Remote workshop
+            </p>
+            <h1 className="text-display text-foreground text-5xl md:text-6xl lg:text-7xl leading-[0.98] text-balance">
+              We verify the plan.{" "}
+              <span className="text-primary">You focus on what matters.</span>
+            </h1>
+          </div>
+
+          {/* Copy + CTA — right */}
+          <div className="lg:col-span-6 lg:pt-3">
+            <p className="text-base text-foreground/80 leading-relaxed mb-8 [text-wrap:pretty]">
+              Phare Consulting Group takes one plan, one model, one forecast at a
+              time and rebuilds it from the invoice line up. The workshop
+              is small and remote. Two names go on the sheet. What comes
+              back is the same artifact you sent, redrawn against the
+              evidence, with the branches that no longer bear weight
+              crossed through. One artifact. One rebuild. No standing
+              retainer.
+            </p>
+            <button
+              onClick={() => scrollToSection("#contact")}
+              className="group inline-flex items-center gap-3 rounded-full bg-primary text-primary-foreground pl-6 pr-2 py-2 text-sm font-semibold hover:bg-primary/90 transition-colors"
+            >
+              Send the plan
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary-foreground/15 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <ArrowUpRight size={16} strokeWidth={2.5} />
+              </span>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -174,7 +180,7 @@ const Hero = () => {
             {/* Content — solid card panel */}
             <div className="flex-1 flex flex-col p-6 pt-5">
               <p className="text-eyebrow text-primary mb-3 flex items-center gap-2">
-                <span className="w-6 h-px bg-primary" />
+                <span aria-hidden className="inline-block w-2 h-2 rounded-full bg-primary" />
                 {card.eyebrow}
               </p>
               <h3 className="text-display text-lg lg:text-xl leading-tight text-foreground mb-6">
@@ -182,7 +188,7 @@ const Hero = () => {
               </h3>
               <span className="mt-auto inline-flex items-center gap-2 text-sm font-semibold text-foreground">
                 See the rebuild
-                <span className="inline-flex items-center justify-center w-8 h-8 bg-primary text-primary-foreground transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">
                   <ArrowUpRight size={14} strokeWidth={2.5} />
                 </span>
               </span>
@@ -207,7 +213,7 @@ const Hero = () => {
                   "The margin, rebuilt line by line",
                 ].map((label) => (
                   <span key={`${dup}-${label}`} className="flex items-center gap-3">
-                    <span aria-hidden className="inline-block w-1.5 h-1.5 bg-primary" />
+                    <span aria-hidden className="inline-block w-1.5 h-1.5 rounded-full bg-primary" />
                     {label}
                   </span>
                 ))}

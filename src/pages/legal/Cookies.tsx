@@ -12,21 +12,21 @@ const cookieTable = [
     purpose: "Stores your cookie preference so the banner is not shown again.",
     type: "Essential",
     duration: "12 months",
-    provider: "Mosaic Conseil",
+    provider: "Phare Consulting Group",
   },
   {
     name: "session",
     purpose: "Maintains a temporary read session for security and load balancing.",
     type: "Essential",
     duration: "Session",
-    provider: "Mosaic Conseil",
+    provider: "Phare Consulting Group",
   },
   {
     name: "_an_*",
     purpose: "First-party measurement of page reads in aggregate. IP addresses are truncated and no profile is built.",
     type: "Analytics (optional)",
     duration: "13 months",
-    provider: "Mosaic Conseil",
+    provider: "Phare Consulting Group",
   },
 ];
 
@@ -61,7 +61,7 @@ const sections: { heading: string; body: string[] }[] = [
   {
     heading: "5. Contact",
     body: [
-      "Questions about cookies can be sent to contact@mosaicconseil.fr.",
+      "Questions about cookies can be sent to contact@phareconsultinggroup.com.",
     ],
   },
 ];
@@ -115,7 +115,7 @@ const Cookies = () => {
       <PageHeader
         eyebrow="Legal"
         title="Cookies policy"
-        lede="The cookies and similar technologies set by mosaicconseil.fr, what each one does and how to change your choice at any time."
+        lede="The cookies and similar technologies set by phareconsultinggroup.com, what each one does and how to change your choice at any time."
         crumbs={[{ label: "Home", to: "/" }, { label: "Cookies" }]}
         meta={[
           { label: "Last updated", value: "April 2026" },

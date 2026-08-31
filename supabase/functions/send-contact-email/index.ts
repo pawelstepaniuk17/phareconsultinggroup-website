@@ -10,8 +10,8 @@ interface ContactPayload {
 }
 
 const GATEWAY_URL = 'https://connector-gateway.lovable.dev/resend';
-const TO_EMAIL = 'contact@mosaicconseil.fr';
-const FROM_EMAIL = 'Mosaic Conseil <onboarding@resend.dev>';
+const TO_EMAIL = 'contact@phareconsultinggroup.com';
+const FROM_EMAIL = 'Phare Consulting Group <onboarding@resend.dev>';
 
 function esc(str: string) {
   return String(str ?? '').replace(/[&<>"']/g, (c) => ({
@@ -54,7 +54,7 @@ Deno.serve(async (req) => {
 
   const html = `
     <div style="font-family:Georgia,serif;max-width:640px;color:#1a1a1a;">
-      <h2 style="border-bottom:1px solid #ccc;padding-bottom:8px;">New letter — mosaicconseil.fr</h2>
+      <h2 style="border-bottom:1px solid #ccc;padding-bottom:8px;">New letter — phareconsultinggroup.com</h2>
       <p><strong>Name:</strong> ${esc(name)}</p>
       ${title ? `<p><strong>Title:</strong> ${esc(title)}</p>` : ''}
       ${organization ? `<p><strong>Organization:</strong> ${esc(organization)}</p>` : ''}

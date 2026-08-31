@@ -77,9 +77,10 @@ export default {
         cream: "hsl(var(--cream))",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Inter", "system-ui", "sans-serif"],
-        mono: ["ui-monospace", "SFMono-Regular", "monospace"],
+        sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+        display: ["Newsreader", "Georgia", "serif"],
+        serif: ["Newsreader", "Georgia", "serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       borderRadius: {
         lg: "var(--radius)",

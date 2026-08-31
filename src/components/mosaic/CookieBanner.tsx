@@ -41,8 +41,9 @@ const CookieBanner = () => {
       role="dialog"
       aria-live="polite"
       aria-label="Cookie preferences"
-      className="fixed bottom-4 left-4 right-4 sm:left-6 sm:right-auto sm:bottom-6 sm:max-w-md z-[60] glass glass-refract rounded-2xl p-5 sm:p-6 shadow-[0_30px_70px_-30px_hsl(var(--ink)/0.45)] ring-1 ring-foreground/10 animate-fade-up"
+      className="fixed bottom-4 left-4 right-4 sm:left-6 sm:right-auto sm:bottom-6 sm:max-w-md z-[60]"
     >
+      <div className="relative glass glass-refract rounded-2xl p-5 sm:p-6 shadow-[0_30px_70px_-30px_hsl(var(--ink)/0.45)] ring-1 ring-foreground/10 animate-fade-up">
       <button
         type="button"
         onClick={() => persist("essential")}
@@ -63,8 +64,8 @@ const CookieBanner = () => {
         time. No data is shared with advertising networks.
       </p>
       <p className="text-xs text-foreground/60 leading-relaxed mb-5">
-        Data controller: Mosaic Conseil, 75 Avenue Parmentier, 75011
-        Paris — contact@mosaicconseil.fr. See the{" "}
+        Data controller: Phare Consulting Group, 75 Avenue Parmentier, 75011
+        Paris — contact@phareconsultinggroup.com. See the{" "}
         <Link to="/cookies" className="underline decoration-primary underline-offset-4 hover:text-primary">
           cookies policy
         </Link>{" "}
@@ -94,6 +95,7 @@ const CookieBanner = () => {
         >
           Manage
         </Link>
+      </div>
       </div>
     </div>
   );

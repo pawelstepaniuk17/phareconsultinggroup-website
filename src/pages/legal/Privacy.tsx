@@ -5,8 +5,8 @@ const sections: { heading: string; body: string[] }[] = [
   {
     heading: "1. Who is responsible for this site",
     body: [
-      "Mosaic Conseil operates this website. The publisher is reachable at 75 Avenue Parmentier, 75011 Paris, France, by telephone on +33 7 58 92 76 35 and by email at contact@mosaicconseil.fr.",
-      "References to we, us and the firm refer to Mosaic Conseil acting in its capacity as the data controller for the personal data described below.",
+      "Phare Consulting Group operates this website. The publisher is reachable at 75 Avenue Parmentier, 75011 Paris, France, by telephone on +33 7 58 92 76 35 and by email at contact@phareconsultinggroup.com.",
+      "References to we, us and the firm refer to Phare Consulting Group acting in its capacity as the data controller for the personal data described below.",
     ],
   },
   {
@@ -58,7 +58,7 @@ const sections: { heading: string; body: string[] }[] = [
     heading: "8. Your rights",
     body: [
       "You may request access to your data, correction of inaccurate data, deletion of data we no longer need, restriction of processing and portability of data you have provided. You may also withdraw consent for analytics cookies at any time and lodge a complaint with the Commission Nationale de l'Informatique et des Libertés (CNIL), which is the supervisory authority in France.",
-      "Requests can be sent to contact@mosaicconseil.fr. We respond within one month.",
+      "Requests can be sent to contact@phareconsultinggroup.com. We respond within one month.",
     ],
   },
   {
@@ -74,11 +74,11 @@ const Privacy = () => (
     <PageHeader
       eyebrow="Legal"
       title="Privacy notice"
-      lede="How Mosaic Conseil collects, uses and protects personal data when you read this site or write in through the intake form."
+      lede="How Phare Consulting Group collects, uses and protects personal data when you read this site or write in through the intake form."
       crumbs={[{ label: "Home", to: "/" }, { label: "Privacy" }]}
       meta={[
         { label: "Last updated", value: "April 2026" },
-        { label: "Controller", value: "Mosaic" },
+        { label: "Controller", value: "Phare" },
       ]}
     />
     <section className="px-6 lg:px-10 py-16 lg:py-20">

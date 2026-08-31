@@ -27,13 +27,11 @@ const PageHeader = ({ eyebrow, title, lede, crumbs, meta }: PageHeaderProps) => 
           backgroundSize: "72px 72px",
         }}
       />
+      {/* Hairline keyline accent — clean, no ambient sphere */}
       <div
         aria-hidden
-        className="absolute -top-32 -right-24 w-[520px] h-[520px] rounded-full blur-3xl opacity-30"
-        style={{
-          background:
-            "radial-gradient(circle at center, hsl(var(--primary)) 0%, transparent 65%)",
-        }}
+        className="absolute top-0 right-0 h-full w-px bg-border hidden lg:block"
+        style={{ right: "clamp(2rem, 12vw, 14rem)" }}
       />
 
       <div className="relative px-6 lg:px-10">
@@ -64,7 +62,7 @@ const PageHeader = ({ eyebrow, title, lede, crumbs, meta }: PageHeaderProps) => 
                 {eyebrow}
               </p>
             )}
-            <h1 className="text-display text-foreground text-[10vw] sm:text-6xl md:text-7xl lg:text-[5.4rem] leading-[0.95] mb-8 max-w-[18ch]">
+            <h1 className="text-display text-foreground text-[52px] sm:text-7xl md:text-8xl lg:text-[5.6rem] leading-[1.02] text-balance mb-8 max-w-[18ch]">
               {title}
             </h1>
             {lede && (

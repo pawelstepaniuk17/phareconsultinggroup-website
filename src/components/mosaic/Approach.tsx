@@ -77,7 +77,10 @@ const Approach = () => {
         <div className="grid lg:grid-cols-12 gap-8 mb-20">
           <div className="lg:col-span-4">
             <p className="reveal opacity-0 text-eyebrow text-primary mb-6 flex items-center gap-3">
-              <span className="w-8 h-px bg-primary" />
+              <span aria-hidden className="inline-flex items-center gap-1.5">
+                <span className="inline-block w-2 h-2 rounded-full bg-primary" />
+                <span className="inline-block w-6 h-0.5 bg-primary" />
+              </span>
               How the file moves
             </p>
           </div>

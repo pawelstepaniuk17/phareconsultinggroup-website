@@ -63,21 +63,23 @@ const Contact = () => {
       ref={sectionRef}
       className="py-28 md:py-40 bg-background relative overflow-hidden"
     >
-      {/* Glow */}
+      {/* Fine grid keyline backdrop — no ambient sphere */}
       <div
         aria-hidden
-        className="absolute -top-40 right-1/3 w-[700px] h-[700px] rounded-full opacity-25 blur-3xl pointer-events-none"
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
         style={{
-          background:
-            "radial-gradient(circle at center, hsl(var(--primary)) 0%, transparent 65%)",
+          backgroundImage:
+            "linear-gradient(hsl(var(--paper)/.6) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--paper)/.6) 1px, transparent 1px)",
+          backgroundSize: "72px 72px",
         }}
       />
 
       <div className="relative px-6 lg:px-10">
         {/* Big headline */}
         <div className="reveal opacity-0 max-w-5xl mb-20">
-          <p className="text-eyebrow text-primary mb-6 flex items-center gap-3">
-            <span className="w-8 h-px bg-primary" />
+          <p className="text-eyebrow text-primary mb-6 flex items-center gap-2">
+            <span aria-hidden className="inline-block w-2.5 h-2.5 rounded-full bg-primary" />
+            <span aria-hidden className="inline-block w-7 h-0.5 bg-primary" />
             Send the plan
           </p>
           <h2 className="text-display text-foreground text-6xl md:text-7xl lg:text-8xl">
@@ -236,15 +238,12 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-7 py-4 text-sm font-semibold hover:bg-primary/90 transition-colors disabled:opacity-60"
+                className="group inline-flex items-center gap-3 rounded-full bg-primary text-primary-foreground pl-8 pr-3 py-3 text-sm font-semibold hover:bg-primary/90 transition-colors disabled:opacity-60"
               >
                 {isSubmitting ? "Sending..." : "Send the letter"}
-                {!isSubmitting && (
-                  <ArrowUpRight
-                    size={18}
-                    className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                  />
-                )}
+                <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary-foreground/15 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                  <ArrowUpRight size={16} strokeWidth={2.5} />
+                </span>
               </button>
 
               <p className="text-xs text-foreground/50">
