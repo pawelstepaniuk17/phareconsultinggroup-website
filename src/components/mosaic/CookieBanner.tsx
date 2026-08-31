@@ -41,8 +41,9 @@ const CookieBanner = () => {
       role="dialog"
       aria-live="polite"
       aria-label="Cookie preferences"
-      className="fixed bottom-4 left-4 right-4 sm:left-6 sm:right-auto sm:bottom-6 sm:max-w-md z-[60] glass glass-refract rounded-2xl p-5 sm:p-6 shadow-[0_30px_70px_-30px_hsl(var(--ink)/0.45)] ring-1 ring-foreground/10 animate-fade-up"
+      className="fixed bottom-4 left-4 right-4 sm:left-6 sm:right-auto sm:bottom-6 sm:max-w-md z-[60]"
     >
+      <div className="relative glass glass-refract rounded-2xl p-5 sm:p-6 shadow-[0_30px_70px_-30px_hsl(var(--ink)/0.45)] ring-1 ring-foreground/10 animate-fade-up">
       <button
         type="button"
         onClick={() => persist("essential")}
@@ -94,6 +95,7 @@ const CookieBanner = () => {
         >
           Manage
         </Link>
+      </div>
       </div>
     </div>
   );
