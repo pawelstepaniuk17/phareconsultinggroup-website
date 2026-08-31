@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import SchematicMark from "@/components/mosaic/SchematicMark";
+import HeroCircuit from "@/components/mosaic/HeroCircuit";
 import heroWorkshop from "@/assets/hero-workshop.png";
 import cardStrategy from "@/assets/editorial-plan.png";
 import cardPortfolio from "@/assets/editorial-model.png";
@@ -94,53 +95,18 @@ const Hero = () => {
         }}
       />
 
-      {/* Massive editorial headline with mosaic tile accent */}
-      <div className="relative z-10 px-6 lg:px-10 pt-12 lg:pt-20 grid lg:grid-cols-12 gap-8 items-start">
-        <div className="reveal opacity-0 lg:col-span-8">
-          {/* Brand mark + schematic circuit composition (no text) */}
-          <div className="flex items-start gap-6 lg:gap-10">
-            <SchematicMark
-              title="Phare Consulting Group"
-              className="w-16 h-16 lg:w-24 lg:h-24 shrink-0"
-            />
-
-            {/* Big, playful circuit-schematic composition — thick lines, big circles */}
-            <svg
-              aria-hidden
-              viewBox="0 0 320 180"
-              preserveAspectRatio="xMidYMid meet"
-              fill="none"
-              className="relative flex-1 h-48 lg:h-72 w-full"
-            >
-              {/* Thick traces */}
-              <g strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M10 48 H120 V120 H214" stroke="hsl(var(--foreground) / 0.4)" />
-                <path d="M10 120 H74 V158 H182" stroke="hsl(var(--foreground) / 0.4)" />
-                <path d="M120 48 V18 H248" stroke="hsl(var(--primary))" />
-                <path d="M214 120 H306" stroke="hsl(var(--primary))" />
-                <path d="M248 18 V74 H306" stroke="hsl(var(--secondary))" />
-                <path d="M182 158 V74 H214" stroke="hsl(var(--accent))" />
-                <path d="M74 120 V64 H44" stroke="hsl(var(--ochre))" />
-              </g>
-              {/* Big junction + terminal nodes */}
-              <g>
-                <circle cx="10" cy="48" r="8" fill="hsl(var(--primary))" />
-                <circle cx="120" cy="48" r="9" fill="hsl(var(--background))" stroke="hsl(var(--foreground) / 0.55)" strokeWidth="4" />
-                <circle cx="120" cy="120" r="6" fill="hsl(var(--foreground) / 0.55)" />
-                <circle cx="74" cy="120" r="6" fill="hsl(var(--foreground) / 0.55)" />
-                <circle cx="214" cy="120" r="9" fill="hsl(var(--background))" stroke="hsl(var(--primary))" strokeWidth="4" />
-                <circle cx="248" cy="18" r="8" fill="hsl(var(--secondary))" />
-                <circle cx="182" cy="158" r="8" fill="hsl(var(--accent))" />
-                <circle cx="44" cy="64" r="8" fill="hsl(var(--ochre))" />
-                <circle cx="306" cy="120" r="9" fill="hsl(var(--primary))" />
-                <circle cx="306" cy="74" r="8" fill="hsl(var(--secondary))" />
-                <circle cx="214" cy="74" r="6" fill="hsl(var(--foreground) / 0.55)" />
-              </g>
-            </svg>
-          </div>
+      {/* Full-width reactive circuit band */}
+      <div className="relative z-10 px-6 lg:px-10 pt-12 lg:pt-20">
+        <div className="reveal opacity-0 flex items-center gap-6 lg:gap-10">
+          <SchematicMark
+            title="Phare Consulting Group"
+            className="w-16 h-16 lg:w-24 lg:h-24 shrink-0"
+          />
+          {/* Wide, pointer-reactive schematic — spans the full row */}
+          <HeroCircuit className="flex-1 h-44 sm:h-52 lg:h-72" />
         </div>
 
-        <div className="reveal delay-200 opacity-0 lg:col-span-4 lg:pt-6">
+        <div className="reveal delay-200 opacity-0 mt-10 lg:mt-16 lg:max-w-2xl lg:ml-auto">
           <p className="text-eyebrow text-foreground/55 mb-4 flex items-center gap-3">
             <span className="w-8 h-px bg-primary" /> Remote workshop
           </p>

@@ -519,3 +519,19 @@
     transform: perspective(600px) rotateX(0) translateY(0);
   }
 }
+
+/* Circuit "signal flow" — marching dashes along schematic traces */
+.circuit-flow {
+  stroke-dasharray: 5 17;
+  animation: circuitFlow 1.1s linear infinite;
+}
+@keyframes circuitFlow {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .circuit-flow {
+    animation: none;
+  }
+}
