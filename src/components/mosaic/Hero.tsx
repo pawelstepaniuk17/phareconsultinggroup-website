@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import mosaicLogo from "@/assets/mosaic-conseil-logo.png";
+import SchematicMark from "@/components/mosaic/SchematicMark";
 import heroWorkshop from "@/assets/hero-workshop.png";
 import cardStrategy from "@/assets/editorial-plan.png";
 import cardPortfolio from "@/assets/editorial-model.png";
@@ -97,37 +97,46 @@ const Hero = () => {
       {/* Massive editorial headline with mosaic tile accent */}
       <div className="relative z-10 px-6 lg:px-10 pt-12 lg:pt-20 grid lg:grid-cols-12 gap-8 items-start">
         <div className="reveal opacity-0 lg:col-span-8">
-          {/* Brand mark + editorial mosaic composition (no text) */}
+          {/* Brand mark + schematic circuit composition (no text) */}
           <div className="flex items-start gap-8">
-            <img
-              src={mosaicLogo}
-              alt="Phare Consulting Group"
-              width={64}
-              height={64}
-              className="w-12 h-12 lg:w-16 lg:h-16 object-contain shrink-0"
+            <SchematicMark
+              title="Phare Consulting Group"
+              className="w-12 h-12 lg:w-16 lg:h-16 shrink-0"
             />
 
-            {/* Abstract mosaic tile composition — echoes the brand grid */}
-            <div
+            {/* Abstract circuit-schematic composition — lines and circle nodes */}
+            <svg
               aria-hidden
-              className="relative flex-1 h-40 lg:h-56 grid grid-cols-8 grid-rows-4 gap-1.5 lg:gap-2"
+              viewBox="0 0 320 160"
+              preserveAspectRatio="xMidYMid meet"
+              fill="none"
+              className="relative flex-1 h-40 lg:h-56 w-full"
             >
-              <div className="col-span-2 row-span-2 bg-primary" />
-              <div className="col-span-1 row-span-1 bg-secondary/70" />
-              <div className="col-span-1 row-span-2 bg-foreground/10" />
-              <div className="col-span-2 row-span-1 bg-accent/80" />
-              <div className="col-span-2 row-span-3 bg-foreground/[0.06] border border-border" />
-              <div className="col-span-1 row-span-1 bg-primary/30" />
-              <div className="col-span-2 row-span-2 bg-secondary" />
-              <div className="col-span-1 row-span-1 bg-accent/50" />
-              <div className="col-span-1 row-span-1 bg-foreground/15" />
-              <div className="col-span-2 row-span-1 bg-primary/60" />
-              <div className="col-span-1 row-span-1 bg-foreground/[0.06] border border-border" />
-              <div className="col-span-1 row-span-1 bg-accent" />
-              <div className="col-span-2 row-span-1 bg-foreground/10" />
-              <div className="col-span-1 row-span-1 bg-primary/40" />
-              <div className="col-span-1 row-span-1 bg-secondary/50" />
-            </div>
+              {/* Traces */}
+              <g strokeWidth="1.5" strokeLinecap="round">
+                <path d="M8 40 H120 V96 H210" stroke="hsl(var(--foreground) / 0.4)" />
+                <path d="M8 96 H72 V132 H180" stroke="hsl(var(--foreground) / 0.4)" />
+                <path d="M120 40 V16 H244" stroke="hsl(var(--primary))" />
+                <path d="M210 96 H300" stroke="hsl(var(--primary))" />
+                <path d="M244 16 V64 H300" stroke="hsl(var(--secondary))" />
+                <path d="M180 132 V64 H210" stroke="hsl(var(--foreground) / 0.4)" />
+                <path d="M72 96 V60 H40" stroke="hsl(var(--accent))" />
+              </g>
+              {/* Junction + terminal nodes */}
+              <g>
+                <circle cx="8" cy="40" r="4" fill="hsl(var(--primary))" />
+                <circle cx="120" cy="40" r="5" fill="none" stroke="hsl(var(--foreground) / 0.55)" strokeWidth="1.5" />
+                <circle cx="120" cy="96" r="3" fill="hsl(var(--foreground) / 0.55)" />
+                <circle cx="72" cy="96" r="3" fill="hsl(var(--foreground) / 0.55)" />
+                <circle cx="210" cy="96" r="5" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.5" />
+                <circle cx="244" cy="16" r="4" fill="hsl(var(--secondary))" />
+                <circle cx="180" cy="132" r="4" fill="hsl(var(--accent))" />
+                <circle cx="40" cy="60" r="4" fill="hsl(var(--accent))" />
+                <circle cx="300" cy="96" r="5" fill="hsl(var(--primary))" />
+                <circle cx="300" cy="64" r="4" fill="hsl(var(--secondary))" />
+                <circle cx="210" cy="64" r="3" fill="hsl(var(--foreground) / 0.55)" />
+              </g>
+            </svg>
           </div>
         </div>
 

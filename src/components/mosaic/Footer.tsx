@@ -1,4 +1,4 @@
-import logoMark from "@/assets/mosaic-conseil-logo.png";
+import SchematicMark from "@/components/mosaic/SchematicMark";
 import { Link } from "react-router-dom";
 
 const linkColumns = [
@@ -123,10 +123,9 @@ PHARE<span className="text-primary">.</span>GROUP
             <p className="text-cream/55 text-xs max-w-[20ch] leading-relaxed">
               A small room, in the 11th, that reads a second time.
             </p>
-            <img
-              src={logoMark}
-              alt="Phare Consulting Group"
-              className="h-16 w-16 object-contain"
+            <SchematicMark
+              title="Phare Consulting Group"
+              className="h-16 w-16"
             />
           </div>
         </div>
