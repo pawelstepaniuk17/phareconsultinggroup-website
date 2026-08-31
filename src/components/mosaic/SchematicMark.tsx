@@ -2,7 +2,7 @@
  * SchematicMark — the Phare brand mark drawn in a bold electronics-schematic
  * language: a central beacon node (the "lighthouse lamp") ringed by two
  * concentric circles, with radiating trace lines that terminate in large
- * junction dots. Thick strokes, big circles. Pure SVG, themeable via tokens.
+ * junction dots. Solid strokes, pure SVG, themeable via tokens.
  */
 type Props = {
   className?: string;
@@ -34,21 +34,21 @@ const SchematicMark = ({ className = "", title }: Props) => {
       aria-hidden={title ? undefined : true}
       fill="none"
     >
-      {/* Outer concentric ring — thick */}
+      {/* Outer concentric ring — solid, opaque */}
       <circle
         cx={cx}
         cy={cy}
         r="20"
-        stroke="hsl(var(--foreground) / 0.35)"
-        strokeWidth="3"
+        stroke="#1E293B"
+        strokeWidth="2.75"
       />
-      {/* Inner ring — thick, colored */}
+      {/* Inner ring — thick, solid signature teal */}
       <circle
         cx={cx}
         cy={cy}
         r="12"
         stroke="hsl(var(--primary))"
-        strokeWidth="3"
+        strokeWidth="2.75"
       />
       {/* Radiating traces + large terminal junction dots */}
       {beams.map((b, i) => (
@@ -58,8 +58,8 @@ const SchematicMark = ({ className = "", title }: Props) => {
             y1={b.y1}
             x2={b.x2}
             y2={b.y2}
-            stroke="hsl(var(--foreground) / 0.55)"
-            strokeWidth="3"
+            stroke="#1E293B"
+            strokeWidth="2.75"
             strokeLinecap="round"
           />
           <circle
@@ -72,6 +72,7 @@ const SchematicMark = ({ className = "", title }: Props) => {
       ))}
       {/* Beacon core node — big */}
       <circle cx={cx} cy={cy} r="6" fill="hsl(var(--primary))" />
+      <circle cx={cx} cy={cy} r="2.5" fill="#35ABA7" />
     </svg>
   );
 };

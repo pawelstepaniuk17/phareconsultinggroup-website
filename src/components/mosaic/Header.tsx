@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Search, ArrowUpRight } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import SchematicMark from "@/components/mosaic/SchematicMark";
 import { services } from "@/content/services";
 import { industries } from "@/content/industries";
 import { insights } from "@/content/insights";
@@ -154,12 +155,13 @@ const Header = () => {
     >
       <div className="px-6 lg:px-10">
         <div className="flex items-center justify-between h-20">
-          {/* Brand mark — oversized magenta carat */}
+          {/* Brand mark — schematic beacon mark */}
           <Link
             to="/"
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-3.5 group"
             aria-label="Phare Consulting Group — home"
           >
+            <SchematicMark className="w-8 h-8 shrink-0 transition-transform group-hover:scale-105" />
             <span className="flex flex-col leading-tight">
               <span className="font-display text-base font-bold tracking-tight text-foreground">
                 Phare
