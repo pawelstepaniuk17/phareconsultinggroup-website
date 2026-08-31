@@ -114,8 +114,8 @@ const Hero = () => {
               Remote workshop
             </p>
             <h1 className="text-display text-foreground text-5xl md:text-6xl lg:text-7xl leading-[0.98] text-balance">
-              The second reading, before the room agrees
-              <span className="text-primary">.</span>
+              We verify the plan.{" "}
+              <span className="text-primary">You focus on what matters.</span>
             </h1>
           </div>
 
