@@ -66,25 +66,25 @@ const Hero = () => {
       ref={sectionRef}
       className="relative overflow-hidden bg-background pt-32 pb-12 grain"
     >
-      {/* High-resolution editorial cover — top band, faded into the canvas */}
+      {/* Editorial cover — subtle top band, washed into the bright canvas */}
       <div aria-hidden className="absolute inset-x-0 top-0 h-[92%] pointer-events-none">
         <img
           src={heroWorkshop}
           alt=""
-          className="w-full h-full object-cover object-center opacity-40"
+          className="w-full h-full object-cover object-center opacity-[0.16]"
           style={{ transform: `translateY(${scrollY * 0.15}px)` }}
         />
-        {/* Dark gradient scrim for text readability */}
+        {/* Light gradient scrim for text readability on paper */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(180deg, hsl(var(--background) / 0.72) 0%, hsl(var(--background) / 0.86) 45%, hsl(var(--background)) 100%)",
+              "linear-gradient(180deg, hsl(var(--background) / 0.55) 0%, hsl(var(--background) / 0.82) 50%, hsl(var(--background)) 100%)",
           }}
         />
       </div>
 
-      {/* Soft, single gold wash — quiet backdrop */}
+      {/* Soft, single teal wash — quiet backdrop */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
@@ -101,7 +101,7 @@ const Hero = () => {
           <div className="flex items-start gap-8">
             <img
               src={mosaicLogo}
-              alt="Mosaic Conseil"
+              alt="Phare Consulting Group"
               width={64}
               height={64}
               className="w-12 h-12 lg:w-16 lg:h-16 object-contain shrink-0"
@@ -136,7 +136,7 @@ const Hero = () => {
             <span className="w-8 h-px bg-primary" /> Remote workshop
           </p>
           <p className="text-base text-foreground/80 leading-relaxed mb-6 [text-wrap:pretty]">
-            Mosaic Conseil takes one plan, one model, one forecast at a
+            Phare Consulting Group takes one plan, one model, one forecast at a
             time and rebuilds it from the invoice line up. The workshop
             is small and remote. Two names go on the sheet. What comes
             back is the same artifact you sent, redrawn against the

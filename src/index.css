@@ -2,95 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Mosaic Conseil — Institutional dark design system
-   Tier-one advisory aesthetic: deep city-navy canvas, burnished-gold
-   signature accent, editorial serif display, hairline keylines,
-   restrained metallic mosaic palette.
+/* Phare Consulting Group — Bright editorial design system
+   Clean warm-paper canvas, teal signature accent, editorial serif
+   display, hairline keylines, and a warm supporting palette of coral
+   and amber for the mosaic tiles.
 */
 
 @layer base {
   :root {
-    /* Core canvas — deep city navy / near-obsidian */
-    --background: 220 33% 8%;
-    --foreground: 40 28% 90%;
+    /* Core canvas — warm off-white paper */
+    --background: 40 33% 96%;
+    --foreground: 205 42% 13%;
 
-    /* Elevated card surface — subtly lifted navy */
-    --card: 220 28% 11%;
-    --card-foreground: 40 28% 90%;
+    /* Elevated card surface — clean near-white */
+    --card: 40 40% 99%;
+    --card-foreground: 205 42% 13%;
 
-    --popover: 220 30% 10%;
-    --popover-foreground: 40 28% 90%;
+    --popover: 40 40% 99%;
+    --popover-foreground: 205 42% 13%;
 
-    /* Primary — burnished gold */
-    --primary: 38 58% 56%;
-    --primary-foreground: 220 40% 7%;
+    /* Primary — deep teal signature */
+    --primary: 182 58% 32%;
+    --primary-foreground: 40 40% 98%;
 
-    /* Secondary — deep brass */
-    --secondary: 34 40% 44%;
-    --secondary-foreground: 40 30% 92%;
+    /* Secondary — warm coral */
+    --secondary: 8 78% 66%;
+    --secondary-foreground: 205 42% 13%;
 
-    /* Muted — elevated navy surface */
-    --muted: 220 24% 13%;
-    --muted-foreground: 40 12% 66%;
+    /* Muted — soft paper surface */
+    --muted: 40 24% 90%;
+    --muted-foreground: 205 16% 40%;
 
-    /* Accent — pale champagne */
-    --accent: 42 60% 68%;
-    --accent-foreground: 220 40% 7%;
+    /* Accent — bright teal */
+    --accent: 178 52% 44%;
+    --accent-foreground: 205 42% 13%;
 
-    --destructive: 0 62% 48%;
-    --destructive-foreground: 40 30% 92%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 40 40% 98%;
 
-    /* Hairline keyline — approximates border-white/10 on navy */
-    --border: 220 18% 20%;
-    --input: 220 18% 22%;
-    --ring: 38 58% 56%;
+    /* Hairline keyline */
+    --border: 40 18% 84%;
+    --input: 40 18% 84%;
+    --ring: 182 58% 32%;
 
     --radius: 0.5rem;
 
-    /* Extended palette — restrained metallic mosaic tones */
-    --ink: 220 42% 5%;             /* obsidian panel */
-    --ink-soft: 220 30% 12%;
-    --paper: 40 28% 90%;
-    --paper-soft: 40 18% 84%;
-    --cobalt: 210 24% 46%;         /* steel blue */
-    --cobalt-soft: 210 22% 58%;
-    --teal-tile: 198 26% 42%;      /* slate teal */
-    --sage: 34 40% 44%;            /* brass */
-    --forest: 28 42% 40%;          /* bronze */
-    --ochre: 40 62% 60%;           /* gold */
-    --cream: 40 28% 90%;
+    /* Extended palette — bright mosaic tile tones */
+    --ink: 205 45% 11%;            /* deep ink panel */
+    --ink-soft: 205 34% 20%;
+    --paper: 40 33% 96%;
+    --paper-soft: 40 26% 91%;
+    --cobalt: 200 62% 42%;         /* ocean blue */
+    --cobalt-soft: 200 52% 56%;
+    --teal-tile: 178 52% 44%;      /* bright teal */
+    --sage: 8 78% 66%;             /* coral */
+    --forest: 152 40% 40%;         /* leaf green */
+    --ochre: 32 88% 60%;           /* amber */
+    --cream: 40 40% 94%;
 
     /* Sidebar */
-    --sidebar-background: 220 33% 8%;
-    --sidebar-foreground: 40 28% 90%;
-    --sidebar-primary: 38 58% 56%;
-    --sidebar-primary-foreground: 220 40% 7%;
-    --sidebar-accent: 220 24% 13%;
-    --sidebar-accent-foreground: 40 28% 90%;
-    --sidebar-border: 220 18% 20%;
-    --sidebar-ring: 38 58% 56%;
+    --sidebar-background: 40 33% 96%;
+    --sidebar-foreground: 205 42% 13%;
+    --sidebar-primary: 182 58% 32%;
+    --sidebar-primary-foreground: 40 40% 98%;
+    --sidebar-accent: 40 24% 90%;
+    --sidebar-accent-foreground: 205 42% 13%;
+    --sidebar-border: 40 18% 84%;
+    --sidebar-ring: 182 58% 32%;
   }
 
   .dark {
-    --background: 220 33% 8%;
-    --foreground: 40 28% 90%;
-    --card: 220 28% 11%;
-    --card-foreground: 40 28% 90%;
-    --popover: 220 30% 10%;
-    --popover-foreground: 40 28% 90%;
-    --primary: 38 58% 56%;
-    --primary-foreground: 220 40% 7%;
-    --secondary: 34 40% 44%;
-    --secondary-foreground: 40 30% 92%;
-    --muted: 220 24% 13%;
-    --muted-foreground: 40 12% 66%;
-    --accent: 42 60% 68%;
-    --accent-foreground: 220 40% 7%;
-    --destructive: 0 62% 48%;
-    --destructive-foreground: 40 30% 92%;
-    --border: 220 18% 20%;
-    --input: 220 18% 22%;
-    --ring: 38 58% 56%;
+    /* Dark mode — deep teal-ink canvas with paper type */
+    --background: 205 40% 9%;
+    --foreground: 40 30% 94%;
+    --card: 205 34% 13%;
+    --card-foreground: 40 30% 94%;
+    --popover: 205 34% 13%;
+    --popover-foreground: 40 30% 94%;
+    --primary: 178 52% 46%;
+    --primary-foreground: 205 45% 9%;
+    --secondary: 8 72% 64%;
+    --secondary-foreground: 205 45% 9%;
+    --muted: 205 28% 16%;
+    --muted-foreground: 40 14% 72%;
+    --accent: 178 52% 46%;
+    --accent-foreground: 205 45% 9%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 40 30% 94%;
+    --border: 205 22% 22%;
+    --input: 205 22% 22%;
+    --ring: 178 52% 46%;
   }
 }
 

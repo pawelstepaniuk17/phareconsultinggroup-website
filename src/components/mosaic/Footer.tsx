@@ -22,7 +22,7 @@ const linkColumns = [
   {
     heading: "By post",
     links: [
-      { label: "contact@mosaicconseil.fr", href: "mailto:contact@mosaicconseil.fr" },
+      { label: "contact@phareconsultinggroup.com", href: "mailto:contact@phareconsultinggroup.com" },
       { label: "+33 7 58 92 76 35", href: "tel:+33758927635" },
       { label: "Remote practice", href: "/contact" },
     ],
@@ -77,7 +77,7 @@ const Footer = () => {
 
           {/* Bottom legal */}
           <div className="text-foreground/45 text-[11px] space-y-1">
-            <p>© 2026 Mosaic Conseil. All rights reserved.</p>
+            <p>© 2026 Phare Consulting Group. All rights reserved.</p>
             <p>75 Avenue Parmentier, 75011 Paris, France</p>
             <div className="flex gap-4 pt-2">
               <Link to="/legal" className="hover:text-foreground transition-colors">
@@ -114,7 +114,7 @@ const Footer = () => {
               aria-hidden
               className="text-display text-cream font-black tracking-[-0.04em] leading-[0.82] text-[clamp(4rem,16vw,12rem)] text-center"
             >
-              MOSAIC<span className="text-primary">.</span>CONSEIL
+PHARE<span className="text-primary">.</span>GROUP
             </div>
           </div>
 
@@ -125,7 +125,7 @@ const Footer = () => {
             </p>
             <img
               src={logoMark}
-              alt="Mosaic Conseil"
+              alt="Phare Consulting Group"
               className="h-16 w-16 object-contain"
             />
           </div>

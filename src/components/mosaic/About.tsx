@@ -104,7 +104,7 @@ const About = () => {
               </span>
             </h2>
             <p className="reveal delay-100 opacity-0 text-lg text-foreground/75 leading-relaxed max-w-2xl">
-              Mosaic Conseil rebuilds one artifact at a time. A plan, a
+              Phare Consulting Group rebuilds one artifact at a time. A plan, a
               model, a pricing grid, a diligence file. Whatever arrives
               is taken apart on the bench, put back together against the
               invoice ledger, and returned as the same artifact, redrawn.

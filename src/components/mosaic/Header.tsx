@@ -158,14 +158,14 @@ const Header = () => {
           <Link
             to="/"
             className="flex items-center gap-3 group"
-            aria-label="Mosaic Conseil — home"
+            aria-label="Phare Consulting Group — home"
           >
             <span className="flex flex-col leading-tight">
               <span className="font-display text-base font-bold tracking-tight text-foreground">
-                Mosaic
+                Phare
               </span>
               <span className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground -mt-0.5">
-                Conseil
+                Consulting Group
               </span>
             </span>
           </Link>

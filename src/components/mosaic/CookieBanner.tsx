@@ -63,8 +63,8 @@ const CookieBanner = () => {
         time. No data is shared with advertising networks.
       </p>
       <p className="text-xs text-foreground/60 leading-relaxed mb-5">
-        Data controller: Mosaic Conseil, 75 Avenue Parmentier, 75011
-        Paris — contact@mosaicconseil.fr. See the{" "}
+        Data controller: Phare Consulting Group, 75 Avenue Parmentier, 75011
+        Paris — contact@phareconsultinggroup.com. See the{" "}
         <Link to="/cookies" className="underline decoration-primary underline-offset-4 hover:text-primary">
           cookies policy
         </Link>{" "}

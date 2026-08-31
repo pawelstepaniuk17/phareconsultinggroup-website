@@ -5,14 +5,14 @@ const sections: { heading: string; body: string[] }[] = [
   {
     heading: "1. Scope",
     body: [
-      "These terms govern your use of mosaicconseil.fr and any subdomain operated by Mosaic Conseil. By reading the site you accept the terms as drafted. If you do not accept them, do not use the site.",
+      "These terms govern your use of phareconsultinggroup.com and any subdomain operated by Phare Consulting Group. By reading the site you accept the terms as drafted. If you do not accept them, do not use the site.",
       "These terms govern site use only. Engagements are governed by a separate written engagement letter signed by both parties.",
     ],
   },
   {
     heading: "2. Publisher and host",
     body: [
-      "Publisher: Mosaic Conseil, 75 Avenue Parmentier, 75011 Paris, France. Email: contact@mosaicconseil.fr. Telephone: +33 7 58 92 76 35.",
+      "Publisher: Phare Consulting Group, 75 Avenue Parmentier, 75011 Paris, France. Email: contact@phareconsultinggroup.com. Telephone: +33 7 58 92 76 35.",
       "Director of publication: the managing officer of the firm at the time of publication.",
       "Hosting provider: details available on request to the publisher.",
     ],
@@ -27,8 +27,8 @@ const sections: { heading: string; body: string[] }[] = [
   {
     heading: "4. Intellectual property",
     body: [
-      "All text, graphics, logos, photographs, layouts and source code are the property of Mosaic Conseil or its licensors and are protected by French and international intellectual-property law. Reproduction, public communication or adaptation, in whole or in part, is prohibited without prior written authorisation, except for short citations that respect the moral rights of the author and identify the source.",
-      "The Mosaic Conseil name and the mosaic-tile mark are trademarks of the firm. No licence is granted by virtue of access to the site.",
+      "All text, graphics, logos, photographs, layouts and source code are the property of Phare Consulting Group or its licensors and are protected by French and international intellectual-property law. Reproduction, public communication or adaptation, in whole or in part, is prohibited without prior written authorisation, except for short citations that respect the moral rights of the author and identify the source.",
+      "The Phare Consulting Group name and the mosaic-tile mark are trademarks of the firm. No licence is granted by virtue of access to the site.",
     ],
   },
   {
@@ -66,7 +66,7 @@ const sections: { heading: string; body: string[] }[] = [
   {
     heading: "10. Contact",
     body: [
-      "Questions about these terms can be sent to contact@mosaicconseil.fr.",
+      "Questions about these terms can be sent to contact@phareconsultinggroup.com.",
     ],
   },
 ];
@@ -76,7 +76,7 @@ const Terms = () => (
     <PageHeader
       eyebrow="Legal"
       title="Terms of use"
-      lede="The conditions that govern reading, citing and otherwise using mosaicconseil.fr. Engagement work is covered by a separate written letter."
+      lede="The conditions that govern reading, citing and otherwise using phareconsultinggroup.com. Engagement work is covered by a separate written letter."
       crumbs={[{ label: "Home", to: "/" }, { label: "Terms" }]}
       meta={[
         { label: "Last updated", value: "April 2026" },
