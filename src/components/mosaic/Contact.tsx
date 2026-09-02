@@ -49,7 +49,7 @@ const Contact = () => {
       toast({
         title: "Something went wrong",
         description:
-          "The letter could not be delivered. Please try again, or email contact@mosaicconseil.fr directly.",
+          "The letter could not be delivered. Please try again, or email contact@phareconsultinggroup.com directly.",
         variant: "destructive",
       });
     } finally {

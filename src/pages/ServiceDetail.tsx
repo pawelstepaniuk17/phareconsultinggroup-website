@@ -140,29 +140,6 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20 md:py-24 bg-muted border-y border-border">
-        <div className="px-6 lg:px-10">
-          <p className="text-eyebrow text-primary mb-4">Who reads it</p>
-          <h3 className="text-display text-foreground text-3xl md:text-4xl mb-12">
-            A small, named table for the length of the file.
-          </h3>
-          <div className="grid md:grid-cols-3 gap-px bg-border border border-border">
-            {service.team.map((t) => (
-              <div key={t.role} className="bg-muted p-8 lg:p-10">
-                <div className="grid grid-cols-2 gap-1 w-8 h-8 mb-5">
-                  <span className="bg-primary" />
-                  <span className="bg-accent" />
-                  <span className="bg-secondary" />
-                  <span className="bg-[hsl(var(--cobalt-soft))]" />
-                </div>
-                <h4 className="text-display text-xl text-foreground mb-3">{t.role}</h4>
-                <p className="text-sm text-foreground/70 leading-relaxed">{t.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Pattern + CTA */}
       <section className="py-20 md:py-28 bg-background">

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { X } from "lucide-react";
 
-const STORAGE_KEY = "mosaic.cookie-consent.v1";
+const STORAGE_KEY = "phare.cookie-consent.v1";
 
 type Choice = "all" | "essential";
 

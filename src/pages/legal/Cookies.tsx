@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import SiteLayout from "@/components/mosaic/SiteLayout";
 import PageHeader from "@/components/mosaic/PageHeader";
 
-const STORAGE_KEY = "mosaic.cookie-consent.v1";
+const STORAGE_KEY = "phare.cookie-consent.v1";
 
 type Stored = { choice: "all" | "essential"; at: string } | null;
 
 const cookieTable = [
   {
-    name: "mosaic.cookie-consent.v1",
+    name: "phare.cookie-consent.v1",
     purpose: "Stores your cookie preference so the banner is not shown again.",
     type: "Essential",
     duration: "12 months",
