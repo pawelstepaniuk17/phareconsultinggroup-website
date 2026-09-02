@@ -101,7 +101,7 @@ const Contact = () => {
 
             <div className="space-y-px bg-border border border-border">
               <a
-                href="mailto:contact@mosaicconseil.fr"
+                href="mailto:contact@phareconsultinggroup.com"
                 className="group flex items-center justify-between gap-4 bg-background p-6 hover:bg-muted transition-colors"
               >
                 <div className="flex items-center gap-4">
@@ -110,8 +110,8 @@ const Contact = () => {
                     <div className="text-eyebrow text-foreground/55 mb-1">
                       Email
                     </div>
-                    <div className="text-foreground font-medium">
-                      contact@mosaicconseil.fr
+                    <div className="text-foreground font-medium break-all">
+                      contact@phareconsultinggroup.com
                     </div>
                   </div>
                 </div>
