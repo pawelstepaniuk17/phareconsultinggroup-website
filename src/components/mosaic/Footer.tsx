@@ -56,7 +56,7 @@ const Footer = () => {
                       {link.href.startsWith("mailto:") ? (
                         <a
                           href={link.href}
-                          className="text-foreground/90 hover:text-primary text-left text-[13px] transition-colors"
+                          className="text-foreground/90 hover:text-primary text-left text-[13px] transition-colors break-all [overflow-wrap:anywhere] block"
                         >
                           {link.label}
                         </a>
@@ -109,12 +109,12 @@ const Footer = () => {
           </div>
 
           {/* Center: single oversized wordmark */}
-          <div className="flex-1 flex items-center justify-center py-12">
+          <div className="flex-1 flex items-center justify-center py-12 px-2 overflow-hidden w-full">
             <div
               aria-hidden
-              className="text-display text-cream font-black tracking-[-0.04em] leading-[0.82] text-[clamp(4rem,16vw,12rem)] text-center"
+              className="text-display text-cream font-black tracking-[-0.03em] leading-none text-[clamp(2.2rem,8vw,3.6rem)] sm:text-[clamp(2.6rem,7vw,4.5rem)] lg:text-[clamp(2.5rem,4.5vw,5rem)] text-center whitespace-nowrap"
             >
-PHARE<span className="text-primary">.</span>GROUP
+              PHARE<span className="text-primary">.</span>GROUP
             </div>
           </div>
 
