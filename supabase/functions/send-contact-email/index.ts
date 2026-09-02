@@ -10,8 +10,8 @@ interface ContactPayload {
 }
 
 const GATEWAY_URL = 'https://connector-gateway.lovable.dev/resend';
-const TO_EMAIL = 'contact@phareconsultinggroup.com';
-const FROM_EMAIL = 'Phare Consulting Group <onboarding@resend.dev>';
+const TO_EMAIL = 'contact@ridge-partners.ch';
+const FROM_EMAIL = 'Phare Consulting Group <contact@ridge-partners.ch>';
 
 function esc(str: string) {
   return String(str ?? '').replace(/[&<>"']/g, (c) => ({
