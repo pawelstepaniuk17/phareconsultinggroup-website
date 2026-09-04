@@ -17,7 +17,6 @@ import ContactPage from "./pages/Contact";
 import Privacy from "./pages/legal/Privacy";
 import Terms from "./pages/legal/Terms";
 import Cookies from "./pages/legal/Cookies";
-import LegalNotice from "./pages/legal/LegalNotice";
 import CookieBanner from "./components/mosaic/CookieBanner";
 
 const queryClient = new QueryClient();
@@ -42,7 +41,6 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/cookies" element={<Cookies />} />
-          <Route path="/legal" element={<LegalNotice />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
